@@ -15,6 +15,7 @@ function App() {
   const [id, setId] = useState<string>("");
   const result = useCallsStatus({
     id,
+    connector: connectors.find((c) => c.id === 'coinbaseWalletSDK'),
     query: {
       enabled: id !== "",
       refetchInterval: (data) => {
